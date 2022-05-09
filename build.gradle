@@ -1,0 +1,35 @@
+plugins{
+    id 'java'
+}
+
+//java {   //альтернатива для автоматической актуализации версии Java
+//    toolchain {
+//        languageVersion - JavaLanguageVersion.of(17)
+//    }
+//}
+
+sourceCompatibility = 11 //рекомендовано к использованию
+targetCompatibility = 11 //рекомендовано к использованию
+
+
+repositories {
+    mavenCentral()  //самый большой репозиторий с java библиотеками. настройка указывает на то что мы будем искать их именно в этом репозиторие.
+}
+
+compileTestJava {
+    options.encoding = 'UTF-8' //кодировка на windows системах
+}
+
+dependencies {
+    //selenide
+    testImplementation('com.codeborne:selenide:6.4.0') //библиотека для имплементации теста. логи
+    testRuntimeOnly("org.slf4j:slf4j-simple:1.7.36") //доп логи при запуске
+
+    //Junit 5
+    testImplementation('org.junit.jupiter:junit-jupiter-api:5.8.2') //использования аннотаций
+    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.8.2') //запуск J-Unit из командной строки
+}
+
+test {
+    useJUnitPlatform {} //использовать JUnit5
+}
