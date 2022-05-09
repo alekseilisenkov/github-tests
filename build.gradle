@@ -20,6 +20,8 @@ compileTestJava {
     options.encoding = 'UTF-8' //кодировка на windows системах
 }
 
+
+
 dependencies {
     //selenide
     testImplementation('com.codeborne:selenide:6.4.0') //библиотека для имплементации теста. логи
@@ -31,5 +33,8 @@ dependencies {
 }
 
 test {
+
+//    systemProperty "chromeoptions.prefs","until.accept_languages=en" //установить языкр браузера по умолчанию
+
     useJUnitPlatform {} //использовать JUnit5
 }
