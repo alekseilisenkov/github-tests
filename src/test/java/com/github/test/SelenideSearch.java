@@ -1,4 +1,4 @@
-package com.github;
+package com.github.test;
 
 import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.Test;

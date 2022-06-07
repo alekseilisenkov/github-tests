@@ -1,4 +1,4 @@
-package com.github;
+package com.github.test;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
