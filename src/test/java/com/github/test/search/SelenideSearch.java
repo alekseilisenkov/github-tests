@@ -12,8 +12,7 @@ public class SelenideSearch {
 
         open("https://github.com");
         $("[data-test-selector=nav-search-input]").setValue("selenide").pressEnter();
-        var listOfRepositores=$$(".repo-list");
-        listOfRepositores.first().$("a").click();
+        $$(".repo-list").first().$("a").click();
         $("h2").should(text("selenide / selenide"));
     }
 }
