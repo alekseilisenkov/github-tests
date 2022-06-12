@@ -1,1 +1,1 @@
-# lesson-4-selenide
+# Open - tests in GitHub
