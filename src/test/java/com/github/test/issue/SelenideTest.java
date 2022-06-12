@@ -11,21 +11,18 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class SelenideTest {
 
-
+    public static final String REPO = "eroshenkoam/allure-example";
 
     @Test
-    public void IssueTest(){
+    public void IssueTest() {
         open("https://github.com/");
         $(".header-search-input").click();
-        $(".header-search-input").sendKeys("eroshenkoam/allure-example");
+        $(".header-search-input").sendKeys(REPO);
         $(".header-search-input").submit();
 
-        $(By.linkText("eroshenkoam/allure-example")).click();
+        $(By.linkText(REPO)).click();
         $("#issues-tab").shouldBe(Condition.visible);
         $("#issues-tab").shouldHave(Condition.text("Issues"));
-
-
-
 
     }
 

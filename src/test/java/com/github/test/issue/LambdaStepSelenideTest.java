@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 public class LambdaStepSelenideTest {
-
+    public static final String REPO = "eroshenkoam/allure-example";
 
     @Test
     public void IssueTest() {
@@ -19,12 +19,12 @@ public class LambdaStepSelenideTest {
 
         step("Ищем репозиторий", () -> {
             $(".header-search-input").click();
-            $(".header-search-input").sendKeys("eroshenkoam/allure-example");
+            $(".header-search-input").sendKeys(REPO);
             $(".header-search-input").submit();
         });
 
         step("Переходим в репозиторий", () -> {
-            $(By.linkText("eroshenkoam/allure-example")).click();
+            $(By.linkText(REPO)).click();
         });
 
         step("Проверка видимости вкладки ISSUES", () -> {
