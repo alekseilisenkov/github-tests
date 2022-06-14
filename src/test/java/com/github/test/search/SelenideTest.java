@@ -9,10 +9,10 @@ import static com.codeborne.selenide.Selenide.*;
 
 
 public class SelenideTest {
+
     @Test
     @DisplayName("searchForSoftAssertions")
     void searchForSoftAssertions (){
-
         open("https://github.com/selenide/selenide");
         $$(".UnderlineNav-body.list-style-none li").get(5).click();
         $(".Layout-main").shouldHave(text("Soft assertions"));

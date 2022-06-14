@@ -9,6 +9,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 public class LambdaStepSelenideTest {
+
     public static final String REPO = "eroshenkoam/allure-example";
 
     @Test
@@ -34,8 +35,5 @@ public class LambdaStepSelenideTest {
         step("Проверка наличия текста Issues на странице", () -> {
             $("#issues-tab").shouldHave(Condition.text("Issues"));
         });
-
-
     }
-
 }

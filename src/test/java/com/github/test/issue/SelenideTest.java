@@ -23,7 +23,5 @@ public class SelenideTest {
         $(By.linkText(REPO)).click();
         $("#issues-tab").shouldBe(Condition.visible);
         $("#issues-tab").shouldHave(Condition.text("Issues"));
-
     }
-
 }
