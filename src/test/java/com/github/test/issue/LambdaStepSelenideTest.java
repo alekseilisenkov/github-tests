@@ -14,9 +14,7 @@ public class LambdaStepSelenideTest {
 
     @Test
     public void IssueTest() {
-        step("Открываем главную страницу", () -> {
-            open("https://github.com/");
-        });
+        step("Открываем главную страницу", () -> open("https://github.com/"));
 
         step("Ищем репозиторий", () -> {
             $(".header-search-input").click();
@@ -24,9 +22,7 @@ public class LambdaStepSelenideTest {
             $(".header-search-input").submit();
         });
 
-        step("Переходим в репозиторий", () -> {
-            $(By.linkText(REPO)).click();
-        });
+        step("Переходим в репозиторий", () -> $(By.linkText(REPO)).click());
 
         step("Проверка видимости вкладки ISSUES", () -> {
             $("#issues-tab").shouldBe(Condition.visible);
